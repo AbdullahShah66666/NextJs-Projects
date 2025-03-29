@@ -6,11 +6,11 @@ const ButtonForPractice = dynamic(
     ssr: false,
   }
 );*/
-'use client';
+
 import React from 'react';
 import Link from 'next/link';
 
-import ButtonForPractice from './counter';
+import ButtonForPractice from '../components/counter';
 
 export default function Home() {
   return (
