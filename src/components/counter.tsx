@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function ButtonForPractice() {
+export default function CounterButton() {
   const [count, setCount] = useState(0);
 
   function handleClickForIncrement() {
