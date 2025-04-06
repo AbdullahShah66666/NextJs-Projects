@@ -1,12 +1,13 @@
 {
-  "name": "my-first-project",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -24,7 +25,7 @@
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19",
     "@typescript-eslint/parser": "^8.29.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.6",
@@ -34,5 +35,18 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "typescript-eslint": "^8.28.0"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdullahShah66666/NextJs-Projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbdullahShah66666/NextJs-Projects/issues"
+  },
+  "homepage": "https://github.com/AbdullahShah66666/NextJs-Projects#readme"
 }
