@@ -33,13 +33,12 @@ export default function RootLayout({
           geistSans.variable,
           geistMono.variable,
           "antialiased",
-          "bg-white",
           "min-h-screen",
           "flex",
           "flex-col"
         )}
       >
-        <header className='flex flex-row bg-white text-black justify-evenly mb-2'>
+        <header className='flex flex-row bg-black text-black justify-evenly mb-2'>
           <div className='bg-yellow-300 px-4 py-2'>
             <Link href='/'>Home</Link>
           </div>
@@ -58,7 +57,7 @@ export default function RootLayout({
         </header>
         {children}
 
-        <footer className='flex flex-row bg-white text-black justify-evenly mt-2'>
+        <footer className='flex flex-row bg-black text-black justify-evenly mt-2'>
           <div className='bg-yellow-300 px-4 py-2'>
             <Link href='/'>Home</Link>
           </div>

@@ -21,7 +21,6 @@ export default function Home() {
       <h1 className='py-2 px-4 my-1 bg-black'>
         <Link href='/products'>Products to test Flexbox</Link>
       </h1>
-      <ToDoList />
     </div>
   );
 }
