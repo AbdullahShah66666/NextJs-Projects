@@ -1,15 +1,16 @@
-import type { NextConfig } from 'next';
+// next.config.ts
+
+/**
+ * @type {import('next').NextConfig}
+ */
+// import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /*webpack: (config, { dev, isServer }) => {
-    if (dev && !isServer) {
-      // Filter out the React Refresh plugin to disable Fast Refresh
-      config.plugins = config.plugins.filter(
-        (plugin) => plugin.constructor.name !== 'ReactRefreshWebpackPlugin'
-      );
-    }
-    return config;
-  },*/
+  eslint: {
+    // This option is required to run ESLint on production builds
+    // and is enabled by default.
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

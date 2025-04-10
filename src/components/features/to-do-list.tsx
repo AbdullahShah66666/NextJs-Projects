@@ -38,7 +38,7 @@ export default function ToDoList() {
     setInputValue("");
   };
 
-  const handleDeleteTask = (index : number) => {
+  const handleDeleteTask = (index: number) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   };
@@ -47,6 +47,8 @@ export default function ToDoList() {
     if (e.key === "Enter") {
       handleAddTask();
       //setShow(true);
+    } else if (e.key === "Delete" && tasks.length > 0) {
+      handleRefreshTasks();
     }
   };
 

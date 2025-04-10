@@ -1,6 +1,13 @@
 import Link from "next/link";
-import CounterButton from "@/components/counter";
-import ToDoList from "@/components/to-do-list";
+import CounterButton from "@/components/features/counter";
+import ToDoList from "@/components/features/to-do-list";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "This is the project page.",
+};
 
 export default function Project() {
   const projectId = 100;

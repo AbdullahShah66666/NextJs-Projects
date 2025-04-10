@@ -10,8 +10,6 @@ const ButtonForPractice = dynamic(
 import React from "react";
 import Link from "next/link";
 
-import ToDoList from "../components/to-do-list";
-
 export default function Home() {
   return (
     <div className='flex-grow flex flex-col justify-center items-center bg-gray-500'>

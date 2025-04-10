@@ -25,7 +25,7 @@
   },
   "settings": {
     "react": {
-      "version": "detects" // Automatically detects the React version you are using
+      "version": "19.1.0" // Automatically detects the React version you are using
     }
   }
 }

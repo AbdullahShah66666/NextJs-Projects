@@ -1,3 +1,6 @@
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+
 import clsx from "clsx";
 
 import Link from "next/link";
@@ -38,42 +41,9 @@ export default function RootLayout({
           "flex-col"
         )}
       >
-        <header className='flex flex-row bg-black text-black justify-evenly mb-2'>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/'>Home</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/projects'>Projects</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/skills'>Skills</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/about'>About</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/contact'>Contact</Link>
-          </div>
-        </header>
+        <Header />
         {children}
-
-        <footer className='flex flex-row bg-black text-black justify-evenly mt-2'>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/'>Home</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/projects'>Projects</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/skills'>Skills</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/about'>About</Link>
-          </div>
-          <div className='bg-yellow-300 px-4 py-2'>
-            <Link href='/contact'>Contact</Link>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

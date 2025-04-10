@@ -15,7 +15,7 @@
     extends: ["eslint:recommended", "plugin:react/recommended"],
     settings: {
       react: {
-        version: "19" // Replace with your React version
+        version: "19.1.0" // Replace with your React version
       }
     }
   };
