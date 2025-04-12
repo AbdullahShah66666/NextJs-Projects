@@ -1,22 +1,27 @@
-{
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "prettier"],
-  "rules": {
-    "react/no-unescaped-entities": "off",
-    "react/react-in-jsx-scope": "off",
+// .eslintrc.js
+module.exports = {
+  root: true,
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint", "react", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "next",
+    "next/core-web-vitals",
+  ],
+  rules: {
+    "react/react-in-jsx-scope": "off", // Not needed for Next.js
+    "react/prop-types": "off", // Because you're using TypeScript
+    "prettier/prettier": "error",
     "no-unused-vars": "warn",
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"]
-  }
-  module.exports = {
-    extends: ["next", "next/core-web-vitals", "prettier"]
-  };
-  
-  module.exports = {
-    extends: ["eslint:recommended", "plugin:react/recommended"],
-    settings: {
-      react: {
-        version: "19.1.0" // Replace with your React version
-      }
-    }
-  };
-  }
+    semi: ["error", "always"],
+    quotes: ["error", "double"],
+  },
+  settings: {
+    react: {
+      version: "detect", // Automatically detect React version
+    },
+  },
+};

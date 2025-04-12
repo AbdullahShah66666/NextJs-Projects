@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write .",
+    "check:code": "npm run format && npm run lint:fix",
+    "prune": "ts-prune"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -25,23 +28,23 @@
     "@types/node": "^20",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19",
-    "@typescript-eslint/parser": "^8.29.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
     "eslint": "^9.24.0",
-    "eslint-config-next": "^15.2.4",
-    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-next": "^15.3.0",
+    "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
-    "tailwindcss": "^4",
-    "typescript": "^5",
-    "typescript-eslint": "^8.28.0"
+    "tailwindcss": "^4.0.0",
+    "ts-prune": "^0.10.3",
+    "typescript": "^5"
   },
-  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
-  "main": ".eslintrc.js",
+  "description": "This is a Next.js project bootstrapped with create-next-app.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbdullahShah66666/NextJs-Projects.git"
+    "url": "https://github.com/AbdullahShah66666/NextJs-Projects.git"
   },
   "keywords": [],
   "author": "",
