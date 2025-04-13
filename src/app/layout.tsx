@@ -1,9 +1,8 @@
-import Header from "@/components/layout/header";
+import { ThemeProvider } from "@/components/features/theme";
 import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
 
 import clsx from "clsx";
-
-import Link from "next/link";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -41,9 +40,11 @@ export default function RootLayout({
           "flex-col"
         )}
       >
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

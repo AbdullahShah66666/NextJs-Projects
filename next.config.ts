@@ -5,7 +5,7 @@
  */
 // import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   eslint: {
     // This option is required to run ESLint on production builds
     // and is enabled by default.

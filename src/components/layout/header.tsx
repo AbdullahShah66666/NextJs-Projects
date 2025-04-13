@@ -76,9 +76,9 @@ export default function Header() {
           {isSidebarOpen ? (
             <motion.div
               key='back'
-              initial={{ opacity: 0, rotate: 180 }}
+              initial={{ opacity: 0, rotate: -180 }}
               animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: -180 }}
+              exit={{ opacity: 0, rotate: 180 }}
               transition={{ duration: 0.3 }}
             >
               <IoIosArrowBack size={25} color='black' />
@@ -86,9 +86,9 @@ export default function Header() {
           ) : (
             <motion.div
               key='hamburger'
-              initial={{ opacity: 0, rotate: 180 }}
+              initial={{ opacity: 0, rotate: -180 }}
               animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: -180 }}
+              exit={{ opacity: 0, rotate: 180 }}
               transition={{ duration: 0.3 }}
             >
               <RxHamburgerMenu

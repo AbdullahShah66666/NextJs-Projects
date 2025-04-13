@@ -1,3 +1,4 @@
+import CounterButton from "@/components/features/counter";
 import ToDoList from "@/components/features/to-do-list";
 
 import type { Metadata } from "next";
@@ -16,7 +17,7 @@ export default function Project() {
         Welcome to the Project Page
       </h1>
       <div className='flex flex-col gap-4 items-center justify-start bg-gray-700 min-h-screen w-full'>
-        {/* <CounterButton /> */}
+        <CounterButton />
 
         <ToDoList />
       </div>

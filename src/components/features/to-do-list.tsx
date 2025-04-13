@@ -123,12 +123,12 @@ export default function ToDoList() {
             transition={{
               duration: 0.2,
               opacity: { duration: 0.4 },
-              height: { duration: 0.6 },
-              width: { duration: 0.6 },
-              marginbottom: { duration: 0.5 },
-              margintop: { duration: 0.5 },
-              paddingtop: { duration: 0.5 },
-              paddingbottom: { duration: 0.5 },
+              height: { duration: 0.4 },
+              width: { duration: 0.5 },
+              marginbottom: { duration: 0.4 },
+              margintop: { duration: 0.4 },
+              paddingtop: { duration: 0.4 },
+              paddingbottom: { duration: 0.4 },
             }}
             className='bg-white text-black rounded-md w-auto max-w-md p-1 mt-1'
           >
