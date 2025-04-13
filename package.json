@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "d": "npm run dev",
-    "b": "npm run build",
-    "s": "npm run start",
+    "dev": "pnpm next dev --turbopack",
+    "build": "pnpm next build",
+    "start": "pnpm next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write .",
@@ -39,12 +36,25 @@
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
     "tailwindcss": "^4.0.0",
     "ts-prune": "^0.10.3",
     "typescript": "^5"
   },
-  "description": "This is a Next.js project bootstrapped with create-next-app.",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "description": "My personal portfolio built with Next.js, Tailwind CSS, and React.",
   "repository": {
     "type": "git",
     "url": "https://github.com/AbdullahShah66666/NextJs-Projects.git"
@@ -55,5 +65,8 @@
   "bugs": {
     "url": "https://github.com/AbdullahShah66666/NextJs-Projects/issues"
   },
-  "homepage": "https://github.com/AbdullahShah66666/NextJs-Projects#readme"
+  "homepage": "https://github.com/AbdullahShah66666/NextJs-Projects#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }

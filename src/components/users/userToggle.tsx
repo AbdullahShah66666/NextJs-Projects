@@ -11,7 +11,7 @@ export default function UserToggle() {
   }, [user]);
 
   return (
-    <button className='bg-black cursor-pointer' onClick={toggleUser}>
+    <button className='bg-black cursor-pointer px-2 py-1' onClick={toggleUser}>
       Toggle User : {user}
     </button>
   );
