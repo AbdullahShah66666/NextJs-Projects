@@ -1,5 +1,6 @@
 "use client";
 
+import ThemeToggle from "@/components/theme/themeTogglingButton";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -66,39 +67,45 @@ export default function Header() {
         ))}
       </div>
 
-      {/* Toggle Icon */}
-      <div
-        ref={toggleIconRef}
-        onClick={toggleSidebar}
-        className='sm:hidden cursor-pointer z-50 ml-2 mt-1 w-fit'
-      >
-        <AnimatePresence mode='wait'>
-          {isSidebarOpen ? (
-            <motion.div
-              key='back'
-              initial={{ opacity: 0, rotate: -180 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 180 }}
-              transition={{ duration: 0.3 }}
-            >
-              <IoIosArrowBack size={25} color='black' />
-            </motion.div>
-          ) : (
-            <motion.div
-              key='hamburger'
-              initial={{ opacity: 0, rotate: -180 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 180 }}
-              transition={{ duration: 0.3 }}
-            >
-              <RxHamburgerMenu
-                className='icon-thicker'
-                size={25}
-                color='black'
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+      <div className='flex flex-row justify-between'>
+        {/* Toggle Icon */}
+        <div
+          ref={toggleIconRef}
+          onClick={toggleSidebar}
+          className='sm:hidden cursor-pointer z-50 ml-2 mt-1 w-fit'
+        >
+          <AnimatePresence mode='wait'>
+            {isSidebarOpen ? (
+              <motion.div
+                key='back'
+                initial={{ opacity: 0, rotate: -180 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 180 }}
+                transition={{ duration: 0.3 }}
+              >
+                <IoIosArrowBack size={25} color='black' />
+              </motion.div>
+            ) : (
+              <motion.div
+                key='hamburger'
+                initial={{ opacity: 0, rotate: -180 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 180 }}
+                transition={{ duration: 0.3 }}
+              >
+                <RxHamburgerMenu
+                  className='icon-thicker'
+                  size={25}
+                  color='black'
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+        {/* Theme Toggling Icons */}
+        <div className='flex flex-row gap-2 absolute right-1'>
+          <ThemeToggle />
+        </div>
       </div>
 
       {/* Sidebar */}

@@ -160,7 +160,7 @@ export default function ToDoList() {
                       paddingbottom: { duration: 0.5 },
                     }}
                     whileHover={{ scale: 1.03 }}
-                    className='flex justify-between items-center gap-2 p-2 bg-red-200 overflow-hidden'
+                    className='flex justify-between items-center gap-2 p-2 overflow-hidden'
                   >
                     <span className='break-words text-black'>{task}</span>
                     <CiCircleMinus

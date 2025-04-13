@@ -6,11 +6,11 @@
 }
 
 html.light {
-  --bg: #ffffff;
+  --bg: #f7f1f1;
   --text: #000000;
 }
 html.dark {
-  --bg: oklch(87.2% 0.01 258.338);
+  --bg: #3d3c3c;
   --text: #ffffff;
 }
 

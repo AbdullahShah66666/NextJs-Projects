@@ -7,7 +7,8 @@ const ButtonForPractice = dynamic(
   }
 );*/
 
-import ThemeToggle from "@/components/layout/toggleTheme";
+import UserToggle from "@/components/users/userToggle";
+
 import Link from "next/link";
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
       <h1 className='py-2 px-4 my-1 bg-black'>
         <Link href='/products'>Products to test Flexbox</Link>
       </h1>
-      <ThemeToggle />
+      <UserToggle />
     </div>
   );
 }

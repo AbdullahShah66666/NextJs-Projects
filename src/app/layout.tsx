@@ -1,6 +1,7 @@
-import { ThemeProvider } from "@/components/features/theme";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
+import { ThemeProvider } from "@/components/theme/themeContext";
+import { UserProvider } from "@/components/users/userContext";
 
 import clsx from "clsx";
 
@@ -40,11 +41,13 @@ export default function RootLayout({
           "flex-col"
         )}
       >
-        <ThemeProvider >
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <UserProvider>
+          <ThemeProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </UserProvider>
       </body>
     </html>
   );
