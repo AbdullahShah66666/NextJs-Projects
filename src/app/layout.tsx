@@ -1,7 +1,9 @@
+import { LoadingProvider } from "@/components/context/loading/loadingContext";
+import { ThemeProvider } from "@/components/context/theme/themeContext";
+import { UserProvider } from "@/components/context/users/userContext";
+import { GlobalLoader } from "@/components/features/global-loader";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
-import { ThemeProvider } from "@/components/theme/themeContext";
-import { UserProvider } from "@/components/users/userContext";
 
 import clsx from "clsx";
 
@@ -26,8 +28,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  // parallelRoute1,
+  // parallelRoute2,
 }: Readonly<{
   children: React.ReactNode;
+  // parallelRoute1: React.ReactNode;
+  // parallelRoute2: React.ReactNode;
 }>) {
   return (
     <html lang='en'>
@@ -41,13 +47,18 @@ export default function RootLayout({
           "flex-col"
         )}
       >
-        <UserProvider>
-          <ThemeProvider>
-            <Header />
-            {children}
-            <Footer />
-          </ThemeProvider>
-        </UserProvider>
+        <LoadingProvider>
+          <GlobalLoader />
+          <UserProvider>
+            <ThemeProvider>
+              <Header />
+              {/* {parallelRoute1}
+              {parallelRoute2} */}
+              {children}
+              <Footer />
+            </ThemeProvider>
+          </UserProvider>
+        </LoadingProvider>
       </body>
     </html>
   );

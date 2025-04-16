@@ -2,7 +2,10 @@
 
 import { createContext, ReactNode, useContext, useState } from "react";
 
-type User = "Me" | "Guest";
+interface User {
+  id: string;
+  name: string;
+}
 
 interface UserContextType {
   user: User;
@@ -12,11 +15,17 @@ interface UserContextType {
 const UserContext = createContext<UserContextType | null>(null);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User>("Me");
+  const users: Record<"me" | "guest", User> = {
+    me: { id: "me", name: "Me" },
+    guest: { id: "guest", name: "Guest" },
+  };
+
+  const [user, setUser] = useState<User>(users.me);
 
   const toggleUser = () => {
-    setUser((prev) => (prev === "Me" ? "Guest" : "Me"));
+    setUser((prev) => (prev.id === "me" ? users.guest : users.me));
   };
+
   return (
     <UserContext.Provider value={{ user, toggleUser }}>
       {children}

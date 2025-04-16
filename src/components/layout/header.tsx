@@ -1,6 +1,8 @@
 "use client";
 
-import ThemeToggle from "@/components/theme/themeTogglingButton";
+import ThemeToggle from "@/components/context/theme/themeTogglingButton";
+import UserToggle from "@/components/context/users/userToggle";
+
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -11,8 +13,6 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "Products", href: "/products" },
-  { label: "Skills", href: "/skills" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -50,9 +50,9 @@ export default function Header() {
   }, []);
 
   return (
-    <div className='font-semibold'>
+    <div className='font-stretch-50'>
       {/* Top Navbar */}
-      <div className='hidden sm:flex flex-row justify-end gap-1 mr-5'>
+      <div className='hidden sm:flex flex-row justify-end items-center gap-1 mr-5'>
         {navItems.map((item) => (
           <motion.div
             key={`navbar-top-${item.href}`}
@@ -60,15 +60,19 @@ export default function Header() {
               scale: 1.02,
               transition: { type: "spring", stiffness: 100, damping: 5 },
             }}
-            className='text-black px-7 py-1.5 hover:bg-gray-400 transition-bg duration-200 rounded-sm'
+            className='text-shadow-white px-7 py-1.5 hover:bg-gray-400 hover:text-gray-900 transition-all duration-400 rounded-sm'
           >
             <Link href={item.href}>{item.label}</Link>
           </motion.div>
         ))}
+        <div className='flex flex-row gap-3 items-center'>
+          <ThemeToggle />
+          <UserToggle />
+        </div>
       </div>
 
-      <div className='flex flex-row justify-between'>
-        {/* Toggle Icon */}
+      <div className='flex flex-row justify-between mr-3'>
+        {/* Toggle Side Bar Icon */}
         <div
           ref={toggleIconRef}
           onClick={toggleSidebar}
@@ -103,8 +107,13 @@ export default function Header() {
           </AnimatePresence>
         </div>
         {/* Theme Toggling Icons */}
-        <div className='flex flex-row gap-2 absolute right-1'>
-          <ThemeToggle />
+        <div className='flex flex-row items-center gap-2 sm:hidden'>
+          <UserToggle />
+          {/* Theme Toggle */}
+          <div className='flex flex-row sm:hidden'>
+            <ThemeToggle />
+          </div>
+          {/* <ThemeToggle className='flex sm:hidden' /> */}
         </div>
       </div>
 
@@ -143,3 +152,13 @@ export default function Header() {
     </div>
   );
 }
+
+// sm: for screens >= 640px (small)
+
+// md: for screens >= 768px (medium)
+
+// lg: for screens >= 1024px (large)
+
+// xl: for screens >= 1280px (extra-large)
+
+// 2xl: for screens >= 1536px (double extra-large)

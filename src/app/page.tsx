@@ -7,20 +7,18 @@ const ButtonForPractice = dynamic(
   }
 );*/
 
-import UserToggle from "@/components/users/userToggle";
-
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  // await new Promise((resolve) => setTimeout(resolve, 3000)); //3 sec delay
   return (
     <div className='flex flex-col justify-center items-center bg-gray-500'>
       <h1 className='py-2 px-4 my-1 bg-black'>
         <Link href='/products'>Products</Link>
       </h1>
       <h1 className='py-2 px-4 my-1 bg-black'>
-        <Link href='/products'>Products to test Flexbox</Link>
+        <Link href='/slow'>Slow Page</Link>
       </h1>
-      <UserToggle />
     </div>
   );
 }
