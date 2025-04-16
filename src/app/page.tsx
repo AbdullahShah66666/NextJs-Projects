@@ -16,9 +16,6 @@ export default async function Home() {
       <h1 className='py-2 px-4 my-1 bg-black'>
         <Link href='/products'>Products</Link>
       </h1>
-      <h1 className='py-2 px-4 my-1 bg-black'>
-        <Link href='/slow'>Slow Page</Link>
-      </h1>
     </div>
   );
 }

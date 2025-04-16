@@ -162,7 +162,9 @@ export default function ToDoList() {
                     whileHover={{ scale: 1.03 }}
                     className='flex justify-between items-center gap-2 p-2 overflow-hidden'
                   >
-                    <span className='break-words text-black'>{task}</span>
+                    <span className='break-words text-black'>
+                      {index + 1}: {task}
+                    </span>
                     <CiCircleMinus
                       className='bg-white rounded-full flex-shrink-0 cursor-pointer icon-thicker'
                       size={20}
