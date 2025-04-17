@@ -4,7 +4,7 @@ import { useUser } from "@/components/context/users/userContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function UserMe() {
+export default function User() {
   const [count, setCount] = useState(0);
   const { user } = useUser();
   const countKey = `count-${user?.id}`;
@@ -86,7 +86,7 @@ export default function UserMe() {
           exit={{ opacity: 0, x: 10 }}
           whileTap={{ scale: 1.3, width: "auto" }}
           transition={{ type: "spring", duration: 2.2 }}
-          className='cursor-pointer text-lg text-purple-700 bg-yellow-300 font-semibold w-1/2 rounded-xl py-1.5 mb-2'
+          className='cursor-pointer text-md text-purple-700 bg-yellow-300 font-semibold w-1/2 rounded-xl py-1.5 mb-2'
           onClick={handleCount}
         >
           Click To Count

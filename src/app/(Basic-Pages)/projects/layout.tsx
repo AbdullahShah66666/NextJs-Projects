@@ -7,23 +7,21 @@ import { useEffect, useState } from "react";
 
 interface ProjectLayoutProps {
   children: ReactNode;
-  userMe: ReactNode;
-  userGuest: ReactNode;
+  user: ReactNode;
 }
 
 const transition = { type: "tween", duration: 0.3 };
 
-export default function ProjectLayout({
-  children,
-  userMe,
-  userGuest,
-}: ProjectLayoutProps) {
-  const { user } = useUser();
-  const [showUserMe, setShowUserMe] = useState<boolean>(user?.id === "me");
+export default function ProjectLayout({ children, user }: ProjectLayoutProps) {
+  const userContext = useUser();
+  const contextUser = userContext ? userContext.user : null;
+  const [showUserMe, setShowUserMe] = useState<boolean>(
+    contextUser?.id === "me"
+  );
 
   useEffect(() => {
-    setShowUserMe(user?.id === "me");
-  }, [user?.id]);
+    setShowUserMe(contextUser?.id === "me");
+  }, [contextUser?.id]);
 
   console.log;
   return (
@@ -34,25 +32,25 @@ export default function ProjectLayout({
       <AnimatePresence mode='wait'>
         {showUserMe ? (
           <motion.div
-            key='userMe'
+            key={`user-${contextUser?.id}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={transition}
             className='w-full min-h-70 flex flex-row justify-evenly items-center bg-purple-400 text-black'
           >
-            {userMe}
+            {user}
           </motion.div>
         ) : (
           <motion.div
-            key='userGuest'
+            key={`user-${contextUser?.id}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={transition}
             className='w-full min-h-70 flex flex-row justify-evenly items-center bg-purple-600 text-black'
           >
-            {userGuest}
+            {user}
           </motion.div>
         )}
       </AnimatePresence>

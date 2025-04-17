@@ -15,6 +15,7 @@ const navItems = [
   { label: "Products", href: "/products" },
   { label: "Contact", href: "/contact" },
   { label: "F1 Inter. Routes", href: "/f1" },
+  { label: "Data Fetching", href: "/dataFetching" },
 ];
 
 export default function Header() {

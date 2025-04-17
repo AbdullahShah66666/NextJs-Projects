@@ -6,11 +6,18 @@
 // import type { NextConfig } from "next";
 
 const nextConfig = {
+  // This option is required to run ESLint on production builds
+  // and is enabled by default.
   eslint: {
-    // This option is required to run ESLint on production builds
-    // and is enabled by default.
     ignoreDuringBuilds: true,
   },
+  // swcMinify: true,
+  // compiler: {
+  //   styledComponents: true,
+  // },
+  // experimental: {
+  //   swcPlugins: [["swc-plugin-styled-components", {}]],
+  // },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
